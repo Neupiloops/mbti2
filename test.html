@@ -176,27 +176,7 @@ const quotes = [
   "你已经很努力了，允许自己慢下来休息。",
   "世界因你的温柔而更加完整。"
 ];
-
-function rotateQuotes() {
-  const quoteEl = document.getElementById("inspiration-quote");
-  let index = 0;
-
-  const showQuote = () => {
-    quoteEl.style.opacity = 0;
-
-    setTimeout(() => {
-      quoteEl.textContent = quotes[index];
-      quoteEl.style.opacity = 1;
-      index = (index + 1) % quotes.length;
-    }, 1000); // 1s 淡出 + 更新
-  };
-
-  showQuote(); // 初始显示
-  setInterval(showQuote, 10000); // 每10秒更换
-}
-
-document.addEventListener("DOMContentLoaded", rotateQuotes);
-
+  
 const tips = [
   "请放松心情，第一反应往往最准确。"
   "没有“对”或“错”的答案，每个人都独一无二。"
@@ -306,46 +286,53 @@ const questions = [
   "你觉得 INFJ 太理想主义？其实他们的理想常变成现实中的温暖行动。"
 ];
 
+    function pickRandom(arr, count) {
+      const shuffled = [...arr].sort(() => Math.random() - 0.5);
+      return shuffled.slice(0, count);
+    }
 
-function getRandomItems(arr, count) {
-  const shuffled = arr.slice().sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-}
+    let currentQuoteIndex = 0;
+    const quoteEl = document.getElementById('quote-text');
 
-function renderExtras() {
-  const container = document.getElementById("extra-content");
+    function showNextQuote() {
+      quoteEl.classList.remove('opacity-100');
+      quoteEl.classList.add('opacity-0');
+      setTimeout(() => {
+        quoteEl.textContent = quotes[currentQuoteIndex];
+        quoteEl.classList.remove('opacity-0');
+        quoteEl.classList.add('opacity-100');
+        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+      }, 500);
+    }
 
-  const renderSection = (title, emoji, items, color) => {
-    const bg = `${color}-50`;
-    const border = `border-${color}-400`;
-    const text = `text-${color}-800`;
-    const ulColor = `text-${color}-700`;
+    window.addEventListener('DOMContentLoaded', () => {
+      // 初始化名言
+      showNextQuote();
+      setInterval(showNextQuote, 5000);
 
-    const listItems = items.map(item => `<li>${item}</li>`).join("");
+      // 小贴士
+      const tipsListEl = document.getElementById('tips-list');
+      pickRandom(tips, 3).forEach(text => {
+        const li = document.createElement('li');
+        li.textContent = text;
+        tipsListEl.appendChild(li);
+      });
 
-    return `
-      <div class="bg-${bg} border-l-4 ${border} p-4 rounded shadow-sm">
-        <h2 class="text-lg font-semibold ${text} mb-2">${emoji} ${title}</h2>
-        <ul class="list-disc list-inside ${ulColor}">${listItems}</ul>
-      </div>
-    `;
-  };
+      // 冷知识
+      const factsListEl = document.getElementById('facts-list');
+      pickRandom(facts, 3).forEach(text => {
+        const li = document.createElement('li');
+        li.textContent = text;
+        factsListEl.appendChild(li);
+      });
 
-  const tipsList = getRandomItems(tips, 3);
-  const factsList = getRandomItems(facts, 3);
-  const qList = getRandomItems(questions, 1);
+      // 小问答
+      const qaListEl = document.getElementById('qa-list');
+      const li = document.createElement('li');
+      li.textContent = pickRandom(questions, 1)[0];
+      qaListEl.appendChild(li);
+    });
 
-  container.innerHTML = `
-    ${renderSection("小贴士：如何更好地完成测试", "💡", tipsList, "blue")}
-    ${renderSection("趣味心理知识", "🧠", factsList, "yellow")}
-    ${renderSection("心理小问答", "🔍", qList, "green")}
-  `;
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  rotateQuotes();
-  renderExtras();
-});
 </script>
 
       
