@@ -74,35 +74,47 @@
 <!-- 附加内容区：放在“开始测试”按钮下方 -->
 
 <!-- 正能量励志语录显示区 -->
-<div id="quotes" class="text-blue-600 text-xl font-semibold italic mb-8 min-h-[2.5rem] opacity-100 transition-opacity duration-1000">
-  加载中...
-</div>
-  
-<div class="mt-12 max-w-4xl mx-auto px-4 text-left space-y-10">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MBTI 小贴士与激励板块</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 提高动画平滑性 */
+    .fade-transition {
+      transition: opacity 1s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
 
-<!-- 小贴士 -->
-<div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded shadow-sm">
-  <h2 class="text-lg font-semibold text-blue-800 mb-2">🌟 小贴士</h2>
-  <ul id="tips-list" class="list-disc list-inside text-blue-700"></ul>
-    <div>
-</div>
-
-<!-- 趣味心理知识 -->
-<div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded shadow-sm">
-  <h2 class="text-lg font-semibold text-yellow-800 mb-2">💬 趣味心理冷知识</h2>
-   <ul id="facts-list" class="list-disc list-inside text-yellow-700"></ul>
+  <div class="max-w-xl w-full bg-white rounded-2xl shadow-xl p-8 space-y-6">
+    <!-- 名言语录 -->
+    <div id="quote-text" class="text-xl font-semibold text-indigo-700 text-center fade-transition opacity-100">
+      加载中...
     </div>
-</div>
 
-<!-- 趣味互动问答 -->
-<div class="bg-green-50 border-l-4 border-green-400 p-4 rounded shadow-sm">
-  <h2 class="text-lg font-semibold text-green-800 mb-2">🤔 小问答</h2>
-  <ul id="qa-list" class="text-green-700 italic"></ul>
-</div>
+    <!-- 分割线 -->
+    <hr class="border-t border-gray-200" />
 
-</div>
+    <!-- 小贴士 -->
+    <div>
+      <h2 class="text-lg font-bold text-gray-800 mb-2">💡 小贴士</h2>
+      <ul id="tips-list" class="list-disc list-inside text-gray-600 space-y-1"></ul>
+    </div>
 
-</div>
+    <!-- 冷知识 -->
+    <div>
+      <h2 class="text-lg font-bold text-blue-800 mb-2">📘 MBTI 冷知识</h2>
+      <ul id="facts-list" class="list-disc list-inside text-blue-700 space-y-1"></ul>
+    </div>
+
+    <!-- 小问答 -->
+    <div>
+      <h2 class="text-lg font-bold text-green-700 mb-2">❓ 小问答</h2>
+      <ul id="qa-list" class="text-green-700 font-medium space-y-1"></ul>
+    </div>
+  </div>
 
 <script>
 const quotes = [
