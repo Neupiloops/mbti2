@@ -66,25 +66,25 @@
   本测试包含60个精心设计的问题，大约需要15-20分钟完成。请根据您的第一反应选择最符合自己的选项，没有对错之分。测试结果将帮助您更好地了解自己的性格特质和潜能。
 </p>
 
-<!-- 正能量励志语录显示区 -->
-<div id="inspiration-quote"
-     class="text-blue-600 text-xl font-semibold italic mb-8 min-h-[2.5rem] opacity-100 transition-opacity duration-1000">
-  加载中...
-</div>
-
 <button id="start-test"
         class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
   开始测试
 </button>
 
 <!-- 附加内容区：放在“开始测试”按钮下方 -->
+
+<!-- 正能量励志语录显示区 -->
+<div id="quotes" class="text-blue-600 text-xl font-semibold italic mb-8 min-h-[2.5rem] opacity-100 transition-opacity duration-1000">
+  加载中...
+</div>
+  
 <div class="mt-12 max-w-4xl mx-auto px-4 text-left space-y-10">
 
 <!-- 小贴士 -->
 <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded shadow-sm">
   <h2 class="text-lg font-semibold text-blue-800 mb-2">🌟 小贴士</h2>
   <ul id="tips-list" class="list-disc list-inside text-blue-700"></ul>
-    </div>
+    <div>
 </div>
 
 <!-- 趣味心理知识 -->
@@ -213,7 +213,6 @@ const tips = [
     "每天给身体补充 1 份水果或蔬菜，保持精力充沛。",
     "与志同道合的伙伴共同学习，互相激励与监督。",
     "保持生活和工作空间的纯净。"
-
     ];
 
     const facts = [
