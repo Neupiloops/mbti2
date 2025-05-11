@@ -66,10 +66,138 @@
   本测试包含60个精心设计的问题，大约需要15-20分钟完成。请根据您的第一反应选择最符合自己的选项，没有对错之分。测试结果将帮助您更好地了解自己的性格特质和潜能。
 </p>
 
+<!-- 正能量励志语录显示区 -->
+<div id="inspiration-quote"
+     class="text-blue-600 text-xl font-semibold italic mb-8 min-h-[2.5rem] opacity-100 transition-opacity duration-1000">
+  加载中...
+</div>
+
 <button id="start-test"
         class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
   开始测试
 </button>
+
+<!-- 附加内容区：放在“开始测试”按钮下方 -->
+<div class="mt-12 max-w-4xl mx-auto px-4 text-left space-y-10">
+
+<!-- 小贴士 -->
+<div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded shadow-sm">
+  <h2 class="text-lg font-semibold text-blue-800 mb-2">🌟 小贴士：如何开始 MBTI 测试</h2>
+  <ul class="list-disc list-inside text-blue-700">
+    <li>请放松心情，第一反应往往最准确。</li>
+    <li>没有“对”或“错”的答案，每个人都独一无二。</li>
+    <li>请尽量独立完成，不要过度参考他人建议。</li>
+  </ul>
+</div>
+
+<!-- 趣味心理知识 -->
+<div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded shadow-sm">
+  <h2 class="text-lg font-semibold text-yellow-800 mb-2">💬 趣味心理冷知识</h2>
+  <ul class="list-disc list-inside text-yellow-700">
+    <li>研究显示，INFJ 是最稀有的 MBTI 类型，仅占人口的 1%！</li>
+    <li>外向（E）并不一定喜欢社交，只是更容易从外界获取能量。</li>
+    <li>思维（T）和情感（F）并不是冷血与感性，而是判断标准不同。</li>
+  </ul>
+</div>
+
+<!-- 趣味互动问答 -->
+<div class="bg-green-50 border-l-4 border-green-400 p-4 rounded shadow-sm">
+  <h2 class="text-lg font-semibold text-green-800 mb-2">🤔 小问答</h2>
+  <p class="text-green-700 italic">
+    “你觉得内向的人一定不擅长演讲吗？其实很多 TED 演讲者是 I 型人格！”
+  </p>
+</div>
+
+</div>
+
+</div>
+
+<script>
+const quotes = [
+  "你已经比昨天的自己更进一步了。",
+  "不要小看每一次努力的力量。",
+  "你是独一无二的，世界因为你而更加美好。",
+  "每一个梦想的背后，都是不懈的坚持。",
+  "遇见困难时，记住：你已经战胜过很多次了。",
+  "你的存在本身就是一种意义。",
+  "再小的光也能照亮黑暗。",
+  "请勇敢地成为你自己。",
+  "坚持是最浪漫的告白。",
+  "心中有光，何惧前路。",
+  "不负热爱，不负自己。",
+  "你现在的努力，是未来的种子。",
+  "勇敢不是不害怕，而是即使害怕也继续向前。",
+  "你的付出一定会被看到。",
+  "不要着急，一切都在慢慢变好。",
+  "最美的风景，总在前方。",
+  "请相信，温柔和坚定可以并存。",
+  "成长的过程，也值得骄傲。",
+  "你已经很棒了，继续加油！",
+  "今天的坚持，是明天的成就。",
+  "失败不是终点，而是开始的地方。",
+  "你的存在，就是最好的证明。",
+  "只要方向对了，就不怕路远。",
+  "努力不一定成功，但放弃一定失败。",
+  "每一步都算数，每一次都重要。",
+  "你有无限的可能性。",
+  "你值得所有美好的事情。",
+  "未来由现在创造。",
+  "别忘了，你曾熬过的夜晚。",
+  "再黑的夜也会迎来黎明。",
+  "与其担心未来，不如认真过好现在。",
+  "内心的强大，来自于不断尝试。",
+  "梦想不在远方，它藏在你每一次选择里。",
+  "温柔待人，坚定待己。",
+  "你已经比你想象的更加勇敢。",
+  "你的努力，是你最亮的光。",
+  "活成你想成为的样子。",
+  "越努力，越幸运。",
+  "态度决定高度，行动成就未来。",
+  "你是自己的英雄。",
+  "用心生活，是对自己最好的回报。",
+  "真实的你，最迷人。",
+  "世界正在悄悄奖励努力的人。",
+  "就算跌倒，也要优雅地站起来。",
+  "现在的你，就是最好的你。",
+  "一切困难，终将过去。",
+  "只要你不放弃，就还有机会。",
+  "请相信：温柔的坚持会改变世界。",
+  "别急，你值得被耐心等待的好事。",
+  "你的努力不是白费，只是还没到结果的那一天。",
+  "慢一点也没关系，坚持下去就好。",
+  "阳光总在风雨后。",
+  "给自己一点掌声，你真的很棒。",
+  "不要羡慕别人，你也正在闪闪发光。",
+  "真正的力量，是在安静中积蓄。",
+  "向内探索，向外成长。",
+  "人生没有白走的路。",
+  "相信过程，接纳变化。",
+  "做自己的灯，照亮自己的路。",
+  "你已经很努力了，允许自己慢下来休息。",
+  "世界因你的温柔而更加完整。"
+];
+
+function rotateQuotes() {
+  const quoteEl = document.getElementById("inspiration-quote");
+  let index = 0;
+
+  const showQuote = () => {
+    quoteEl.style.opacity = 0;
+
+    setTimeout(() => {
+      quoteEl.textContent = quotes[index];
+      quoteEl.style.opacity = 1;
+      index = (index + 1) % quotes.length;
+    }, 1000); // 1s 淡出 + 更新
+  };
+
+  showQuote(); // 初始显示
+  setInterval(showQuote, 10000); // 每10秒更换
+}
+
+document.addEventListener("DOMContentLoaded", rotateQuotes);
+</script>
+
       
       <!-- 测试进度条 -->
       <div class="hidden mb-8" id="test-progress-container">
