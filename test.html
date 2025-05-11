@@ -73,15 +73,26 @@
 
 <!-- 附加内容区：放在“开始测试”按钮下方 -->
 <!-- 正能量励志语录显示区：居中且与下方模块有间距 -->
-  <body class="bg-gray-50 min-h-screen flex items-center justify-center">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MBTI 小贴士与激励板块</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 提高动画平滑性 */
+    .fade-transition {
+      transition: opacity 1s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+
   <div class="max-w-xl w-full bg-white rounded-2xl shadow-xl p-8 space-y-6">
     <!-- 名言语录 -->
     <div id="quote-text" class="text-xl font-semibold text-indigo-700 text-center fade-transition opacity-100">
       加载中...
     </div>
-  </div>
-  
-<div class="mt-12 max-w-4xl mx-auto px-4 text-left space-y-10">
+
 
     <!-- 分割线 -->
     <hr class="border-t border-gray-200" />
